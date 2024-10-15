@@ -1,5 +1,9 @@
 # Kenshi Labs Task - Home
 
+
+https://github.com/user-attachments/assets/72a95680-0b16-4c6e-9bcd-3fad6072b764
+
+
 ## Project Overview
 
 This project is a task submission for Kenshi Labs, focused on developing a home page with interactive elements and custom components using React Native. The objective is to build a sleek, responsive, and functional interface for a mobile application that handles user Task Crud Operation and form validation.
@@ -37,6 +41,7 @@ To get the project running locally, follow these steps:
 - **Custom Hook and AsyncStorage:** A custom hook is used for managing all CRUD operations, with data persistence handled through AsyncStorage to retain user data locally.
 - **Custom Css:** Custom CSS for the application to ensure a sleek and responsive design, maintaining consistency across devices
 - **use typescript type / interfaces:** TypeScript is used throughout the project to ensure type safety and reliability, defining types and interfaces for components, props, and API data, reducing bugs and improving code readability.
+- **Sorting and Search Added:** Sorting and search functionalities have been implemented to improve user interaction, allowing users to easily find and organize tasks. These features are built with TypeScript to ensure type safety, enhancing the reliability and readability of the code across components and API interactions.
 
 ## Technologies and Libraries Used
 
