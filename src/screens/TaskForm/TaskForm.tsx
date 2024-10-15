@@ -43,7 +43,7 @@ const CreateTask: React.FC<CreateTaskProps> = ({route}) => {
           dueDate: dueDate.toDateString(),
           isComplete: false,
         });
-        Alert.alert('Success', 'Task added successfully!');
+        Alert.alert('Success', 'Task Updated successfully!');
         setTitle('');
         setDescription('');
         setDueDate(null);
@@ -55,7 +55,7 @@ const CreateTask: React.FC<CreateTaskProps> = ({route}) => {
           dueDate: dueDate.toDateString(),
           isComplete: false,
         });
-        Alert.alert('Success', 'Task Update successfully!');
+        Alert.alert('Success', 'Task Added successfully!');
         setTitle('');
         setDescription('');
         setDueDate(null);
