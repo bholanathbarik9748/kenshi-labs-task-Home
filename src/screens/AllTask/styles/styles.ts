@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     color: '#222831',
     textAlign: 'left',
     marginBottom: 20,
-    marginTop: 20,
+    marginTop: 50,
     letterSpacing: 1.5,
     textTransform: 'uppercase',
   },

@@ -1,9 +1,10 @@
 import React, {useCallback, useState} from 'react';
-import {View, FlatList, Text, TouchableOpacity, TextInput} from 'react-native';
+import {View, FlatList, Text, TextInput, TouchableOpacity} from 'react-native';
 import {useTaskManager} from '../../hooks/useTaskManager';
 import {Task} from '../../types/TaskInterface';
 import {styles} from './styles/styles';
 import {useFocusEffect, useNavigation} from '@react-navigation/native'; // For navigation
+import TaskItem from '../../components/TaskItem/TaskItem';
 
 const AllTask = () => {
   const {
@@ -23,46 +24,6 @@ const AllTask = () => {
     useCallback(() => {
       loadTasks(); // This will reload tasks from the storage or state
     }, []),
-  );
-
-  const renderTask = ({item}: {item: Task}) => (
-    <View
-      style={[
-        styles.taskContainer,
-        item.isComplete ? styles.taskComplete : styles.taskIncomplete,
-      ]}>
-      <View style={styles.taskContent}>
-        <Text
-          style={[styles.taskTitle, item.isComplete && styles.strikeThrough]}>
-          {item.title}
-        </Text>
-        <Text style={styles.taskDescription}>{item.description}</Text>
-        <Text style={styles.taskDueDate}>Due: {item.dueDate}</Text>
-      </View>
-      <View style={styles.actionIcons}>
-        <TouchableOpacity
-          onPress={() => toggleTaskComplete(item.id)}
-          style={styles.actionButton}>
-          <Text
-            style={[
-              styles.buttonText,
-              {color: item.isComplete ? '#6c757d' : '#00adb5'},
-            ]}>
-            {item.isComplete ? 'Undo' : 'Complete'}
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => deleteTask(item.id)}
-          style={styles.actionButton}>
-          <Text style={[styles.buttonText, {color: '#dc3545'}]}>Delete</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => navigation.navigate('TaskForm', {TaskId: item.id})}
-          style={styles.actionButton}>
-          <Text style={[styles.buttonText, {color: '#0000FF'}]}>Update</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
   );
 
   // Handle search input
@@ -107,7 +68,13 @@ const AllTask = () => {
       <FlatList
         data={tasks}
         keyExtractor={item => item.id}
-        renderItem={renderTask}
+        renderItem={({item}: {item: Task}) => (
+          <TaskItem
+            task={item}
+            toggleTaskComplete={toggleTaskComplete}
+            deleteTask={deleteTask}
+          />
+        )}
         contentContainerStyle={styles.taskList}
         ListEmptyComponent={() => (
           <Text style={styles.emptyText}>No tasks available</Text>

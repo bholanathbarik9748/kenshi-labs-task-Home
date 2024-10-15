@@ -1,79 +1,70 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Kenshi Labs Task - Home
 
-# Getting Started
+## Project Overview
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+This project is a task submission for Kenshi Labs, focused on developing a home page with interactive elements and custom components using React Native. The objective is to build a sleek, responsive, and functional interface for a mobile application that handles user Task Crud Operation and form validation.
 
-## Step 1: Start the Metro Server
+## Setup Instructions
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+To get the project running locally, follow these steps:
 
-To start Metro, run the following command from the _root_ of your React Native project:
+1. **Clone the repository:**
 
-```bash
-# using npm
-npm start
+   ```bash
+   git clone https://github.com/bholanathbarik9748/kenshi-labs-task-Home.git
+   cd kenshi-labs-task-Home
+   ```
 
-# OR using Yarn
-yarn start
-```
+2. **Install dependencies:**
 
-## Step 2: Start your Application
+   If you're using React native CLI, install the required packages:
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+   ```bash
+   npm install
+   ```
 
-### For Android
+3. **Start the project:**
 
-```bash
-# using npm
-npm run android
+   ```bash
+   npm run start
+   ```
 
-# OR using Yarn
-yarn android
-```
+## Features Implemented
 
-### For iOS
+- **Input Validation:** Error handling and validation for form fields.
+- **Custom Components:** Reusable form input fields for consistent UI and error management.
+- **Dynamic UI:** Adjusts layout and content based on user interaction and authentication state.
+- **Custom Hook and AsyncStorage:** A custom hook is used for managing all CRUD operations, with data persistence handled through AsyncStorage to retain user data locally.
+- **Custom Css:** Custom CSS for the application to ensure a sleek and responsive design, maintaining consistency across devices
+- **use typescript type / interfaces:** TypeScript is used throughout the project to ensure type safety and reliability, defining types and interfaces for components, props, and API data, reducing bugs and improving code readability.
 
-```bash
-# using npm
-npm run ios
+## Technologies and Libraries Used
 
-# OR using Yarn
-yarn ios
-```
+- **React Native CLI:** Framework for building mobile applications.
+- **JavaScript/TypeScript:** Core language for functionality.
+- **Custom Hooks:** For handling input and form validation logic.
+- **React Navigation:** For seamless navigation between screens.
+- **eslint:** A linting tool that helps identify and fix potential errors and enforce consistent coding standards across the project.
+- **prettier:** A code formatter that ensures consistent code style by automatically formatting code, making it easier to read and maintain
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+## Known Limitations
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+- **Imited Error Feedback:** While error handling is implemented for basic input validation, certain edge cases lack detailed feedback. Future iterations should include more comprehensive error messages, particularly for network or server-side errors.
 
-## Step 3: Modifying your App
+- **Authentication Scope:** The current project does not include any authentication logic. Features like user sign-in, sign-up, and role-based access control (admin vs. regular users) are missing and should be implemented for a more secure and personalized experience.
 
-Now that you have successfully run the app, let's modify it.
+- **UI Responsiveness:**  Minor inconsistencies in the UI responsiveness across various device sizes need improvement. The layout should be optimized for better performance on both small and large screens.
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+- **Backend API Integration:**  The app currently does not connect to any backend APIs. All CRUD operations are handled locally through AsyncStorage. Integration with a real backend API would enable persistent data storage and real-time updates.
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+- **Form Validation Coverage:**  While basic form validation is in place, it lacks coverage for more complex cases (e.g., email format validation, password strength checks). More robust validation logic should be implemented to improve user input reliability.
 
-## Congratulations! :tada:
+- **Loading Indicators:**  The app lacks visual feedback for long-running operations such as API requests or CRUD actions, which can result in a poor user experience. Implementing loading spinners or progress indicators would enhance user interaction.
 
-You've successfully run and modified your React Native App. :partying_face:
+## Future Improvements
 
-### Now what?
+- **Admin and Travel Provider Controllers:** Adding functionality for admin and provider users.
+- **Enhanced Validation:** Expand validation to cover edge cases and integrate third-party libraries for more robust form handling.
+- **Additional Features:** Implement features such as password recovery, email verification, and real-time content updates.
+- **Performance Optimization:** Improve performance on larger datasets and reduce loading times.
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
